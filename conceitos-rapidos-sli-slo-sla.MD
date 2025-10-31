@@ -90,13 +90,12 @@ SLO: 99% das políticas devem propagar em até 1 min
 
 
 ## 🔧 4️⃣ Ferramentas para observabilidade e automação
-```text
-Categoria	Ferramentas
-Coleta de métricas	CloudWatch, Prometheus (via exporters), Datadog
-Dashboards e alertas	Grafana, Alertmanager, AWS CloudWatch Alarms
-Logs e tracing	CloudWatch Logs Insights, OpenTelemetry, AWS X-Ray
-Automação de resposta	Lambda, EventBridge + ServiceNow API
-```
+# | Categoria	        | Ferramentas |
+
+- Coleta de métricas: CloudWatch, Prometheus (via exporters), Datadog
+- Dashboards e alertas: Grafana, Alertmanager, AWS CloudWatch Alarms
+- Logs e tracing: CloudWatch Logs Insights, OpenTelemetry, AWS X-Ray
+
 
 ## 🚀 5️⃣ Exemplo resumido de definição SLI/SLO real
 ```text
