@@ -149,7 +149,7 @@ Assim você evita projetar SLOs somente na média (que pode enganar) e garante c
 ## Arquitetura de Monitoramento – Data Lake AWS
 
 ```text
-                   ┌────────────────────────────────┐
+                   ┌─────────────────────────────────┐
                    │         Data Producers          │
                    │ (Sistemas, APIs, Streams, etc.) │
                    └──────────────┬──────────────────┘
