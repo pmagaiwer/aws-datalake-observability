@@ -1,9 +1,9 @@
-🧠 O que é P99 (Percentil 99)
+## 🧠 O que é P99 (Percentil 99)
 ```bash
 👉 P99 (ou Percentil 99) significa que 99% das medições estão abaixo de um determinado valor — ou seja, apenas 1% dos casos são piores que esse limite.
 ```
 
-É usado para medir performance percebida pelo usuário real, ignorando exceções isoladas.
+# É usado para medir performance percebida pelo usuário real, ignorando exceções isoladas.
 
 Percentil	Significado	Exemplo (latência em ms)
 ```bash
@@ -14,16 +14,14 @@ P99	99% das execuções são mais rápidas que esse valor (1% mais lentas)	900 m
 
 ## 💡 Em Data Reliability, usamos P99 para medir:
 
-Tempo máximo aceitável de execução de jobs Glue
-
-Latência de leitura no S3
-
-Tempo de inicialização de clusters EMR
+- Tempo máximo aceitável de execução de jobs Glue
+- Latência de leitura no S3
+- Tempo de inicialização de clusters EMR
 
 📌 Assim você evita projetar SLOs só na média (que pode enganar) e garante confiabilidade real.
 ```bash
 ☁️ Arquitetura de Monitoramento – Data Lake AWS
-                   ┌────────────────────────────────┐
+                   ┌─────────────────────────────────┐
                    │         Data Producers          │
                    │ (Sistemas, APIs, Streams, etc.) │
                    └──────────────┬──────────────────┘
