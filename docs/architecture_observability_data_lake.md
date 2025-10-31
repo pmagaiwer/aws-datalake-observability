@@ -2,12 +2,12 @@
 
 ```mermaid
 flowchart LR
-    Data-Producers ["Sistemas, APIs, Streams, etc."]
-    AWS-S3 ["Storage / Availability"]
-    AWS-Glue-ETL ["Jobs / Transformações"]
-    AWS-EMR (Processing) ["Spark / Hive / Hadoop"]
-    AWS-Athena ["Queries / Consumo final"]
-    Observabilidade-CloudWatch+Grafana ["Prometheus / Alertmanager / ServiceNow"]
+    Data-Producers ["Sistemas - APIs - Streams - etc"]
+    AWS-S3 ["Storage - Availability"]
+    AWS-Glue-ETL ["Jobs - Transformações"]
+    AWS-EMR (Processing) ["Spark - Hive - Hadoop"]
+    AWS-Athena ["Queries - Consumo final"]
+    Observabilidade-CloudWatch+Grafana ["Prometheus - Alertmanager - ServiceNow"]
     Prometheus ["Prometheus"]
     Alertmanager ["Alertmanager"]
     ServiceNow ["ServiceNow"]
