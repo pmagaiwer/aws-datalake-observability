@@ -1,8 +1,8 @@
 ## 🧠 1️⃣ Conceito rápido — SLI, SLO e SLA
 # |Termo	| Significado	             | Exemplo prático                                                                                                    |
-- |SLI    |(Service Level Indicator) | Métrica mensurável que indica a saúde ou confiabilidade de um serviço	% de jobs Glue que completaram com sucesso  |
-- |SLO    |(Service Level Objective) | Meta esperada para o SLI (limite aceitável)	99,5% dos jobs Glue devem terminar com sucesso                        |
-- |SLA    |(Service Level Agreement) | Compromisso formal (comercial ou contratual)	Reprocessamento automático em até 2h se SLO for violado               |
+- SLI (Service Level Indicator) - Métrica mensurável que indica a saúde ou confiabilidade de um serviço	% de jobs Glue que completaram com sucesso
+- SLO (Service Level Objective) - Meta esperada para o SLI (limite aceitável)	99,5% dos jobs Glue devem terminar com sucesso            
+- SLA (Service Level Agreement) - Compromisso formal (comercial ou contratual)	Reprocessamento automático em até 2h se SLO for violado
 
 ## ☁️ 2️⃣ Contexto da arquitetura Data Lake AWS
 
