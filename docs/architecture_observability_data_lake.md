@@ -2,7 +2,7 @@
 
 ```mermaid
 flowchart LR
-    Data Producers ["(Sistemas, APIs, Streams, etc.)"]
+    Data Producers ["Sistemas, APIs, Streams, etc."]
     AWS S3 (Raw) ["Storage / Availability"]
     AWS Glue ETL ["Jobs / Transformações"]
     AWS EMR (Processing) ["Spark / Hive / Hadoop"]
