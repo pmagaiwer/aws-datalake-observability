@@ -2,6 +2,21 @@
 
 Projeto pessoal de observabilidade simulada para um **Data Lake AWS** usando métricas de **SLI/SLO** monitoradas via **Grafana + Prometheus + CloudWatch**.
 
+
+📁 Estrutura do Projeto
+´´´bash
+aws-datalake-observability/
+├── README.md
+├── grafana/
+│   ├── aws_datalake_sli_slo_dashboard.json
+│   └── dashboard_preview.png   ← (opcional)
+├── metrics/
+│   ├── sample_metrics_prometheus.txt
+│   └── sli_slo_definitions.md
+└── docs/
+    └── architecture_overview.md
+´´´
+
 ## 🎯 Objetivo
 Demonstrar como implementar um monitoramento de **confiabilidade de dados (Data Reliability Engineering)** para pipelines em ambiente **AWS Data Lake**, aplicando conceitos de **SRE**.
 
