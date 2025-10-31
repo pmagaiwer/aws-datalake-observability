@@ -12,6 +12,6 @@ flowchart LR
     Alertmanager["Alertmanager"]
     ServiceNow["ServiceNow"]
 
-    Data-Producers --> AWS-S3 --> AWS-Glue-ETL --> AWS-EMR --> AWS-Athena --> Observabilidade
-    Observabilidade --> Prometheus --> Alertmanager --> ServiceNow
+    Data-Producers --> AWS-S3 --> AWS-Glue-ETL --> AWS-EMR --> AWS-Athena --> Observabilidade-CloudWatch+Grafana
+    Observabilidade-CloudWatch+Grafana --> Prometheus --> Alertmanager --> ServiceNow
 ```
