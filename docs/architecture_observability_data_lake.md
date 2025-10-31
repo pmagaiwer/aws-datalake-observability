@@ -12,7 +12,7 @@ flowchart LR
     Alertmanager["Alertmanager"]
     ServiceNow["ServiceNow"]
 
-    Data-Producers --> AWS-S3 --> AWS-Glue --> AWS-EMR --> AWS-Athena --> CloudWatch+Grafana
+    Data-Producers --> AWS-S3 --> AWS-Glue-ETL --> AWS-EMR --> AWS-Athena
     Data-Producers --> CloudWatch+Grafana
     AWS-S3 --> CloudWatch+Grafana
     AWS-Glue-ETL --> CloudWatch+Grafana
