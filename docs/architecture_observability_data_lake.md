@@ -7,11 +7,15 @@ flowchart LR
     AWS-Glue-ETL["Jobs - Transformações"]
     AWS-EMR["Spark - Hive - Hadoop"]
     AWS-Athena["Queries - Consumo final"]
-    Observabilidade-CloudWatch+Grafana["Prometheus - Alertmanager - ServiceNow"]
+    Observabilidade-CloudWatch+Grafana["Observabilidade-CloudWatch+Grafana"]
     Prometheus["Prometheus"]
     Alertmanager["Alertmanager"]
     ServiceNow["ServiceNow"]
 
-    Data-Producers --> AWS-S3 --> AWS-Glue-ETL --> AWS-EMR --> AWS-Athena --> Observabilidade-CloudWatch+Grafana
+    Data-Producers --> Observabilidade-CloudWatch+Grafana
+    AWS-S3 --> Observabilidade-CloudWatch+Grafana
+    AWS-Glue-ETL --> Observabilidade-CloudWatch+Grafana
+    AWS-EMR --> Observabilidade-CloudWatch+Grafana
+    AWS-Athena --> Observabilidade-CloudWatch+Grafana
     Observabilidade-CloudWatch+Grafana --> Prometheus --> Alertmanager --> ServiceNow
 ```
