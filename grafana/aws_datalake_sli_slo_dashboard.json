@@ -1,1 +1,132 @@
-{"dashboard":"simulated example"}
+{
+  "uid": "aws-data-lake-dre",
+  "title": "AWS Data Lake SLI/SLO Dashboard",
+  "tags": ["AWS", "SRE", "Data Lake", "Glue", "EMR", "Athena"],
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "30s",
+  "panels": [
+    {
+      "type": "graph",
+      "title": "🟢 Glue Job Success Rate (%)",
+      "targets": [
+        {
+          "expr": "glue_job_success_rate",
+          "legendFormat": "Success Rate"
+        }
+      ],
+      "yaxes": [
+        {"format": "percent", "label": "Success %"}
+      ],
+      "thresholds": [
+        {"value": 0.99, "colorMode": "critical", "line": true, "op": "lt"}
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "🔵 Glue Job Duration P99 (s)",
+      "targets": [
+        {
+          "expr": "glue_job_duration_p99",
+          "legendFormat": "P99 Duration"
+        }
+      ],
+      "yaxes": [
+        {"format": "s", "label": "Seconds"}
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "🟣 Glue Job Failures per Hour",
+      "targets": [
+        {"expr": "sum(rate(glue_job_failures[1h]))"}
+      ],
+      "yaxes": [
+        {"format": "short", "label": "Failures"}
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "🟠 EMR Bytes Processed (GB)",
+      "targets": [
+        {"expr": "sum(rate(emr_bytes_processed[5m])) / 1024 / 1024 / 1024"}
+      ],
+      "yaxes": [
+        {"format": "GB/s"}
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "🟡 EMR Cluster Startup Time P99 (s)",
+      "targets": [
+        {"expr": "emr_cluster_startup_time_p99"}
+      ],
+      "yaxes": [
+        {"format": "s"}
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "🟤 Athena Query Error Rate (%)",
+      "targets": [
+        {"expr": "100 * (athena_query_errors / athena_query_total)"}
+      ],
+      "yaxes": [
+        {"format": "percent"}
+      ],
+      "thresholds": [
+        {"value": 5, "colorMode": "critical", "op": "gt"}
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "⚫ SLO - Pipeline Availability",
+      "targets": [
+        {"expr": "avg(glue_job_success_rate) * 0.4 + avg(emr_availability) * 0.4 + avg(athena_availability) * 0.2"}
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {"color": "red", "value": 0},
+              {"color": "green", "value": 0.98}
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "graph",
+      "title": "🧠 S3 Bucket Size (GB)",
+      "targets": [
+        {"expr": "s3_bucket_size_bytes / 1024 / 1024 / 1024"}
+      ],
+      "yaxes": [
+        {"format": "GB"}
+      ]
+    },
+    {
+      "type": "table",
+      "title": "⚙️ SLI/SLO Overview",
+      "options": {"showHeader": true},
+      "targets": [
+        {
+          "refId": "A",
+          "type": "table",
+          "data": {
+            "columns": ["Serviço", "SLI", "SLO", "Status"],
+            "rows": [
+              ["Glue", "99.5%", "99.0%", "🟢 OK"],
+              ["EMR", "98.8%", "98.0%", "🟢 OK"],
+              ["Athena", "97.2%", "98.0%", "🔴 Alert"],
+              ["S3", "99.9%", "99.9%", "🟢 OK"]
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
