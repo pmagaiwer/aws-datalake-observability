@@ -15,7 +15,7 @@
 ---
 
 ## 🧱 1️⃣ Estrutura do Dashboard (visão hierárquica)
-
+```text
 📊 Data Lake Reliability Dashboard
 ├── 1️⃣ Overview
 │ ├── SLI: % de jobs Glue concluídos
@@ -36,7 +36,7 @@
 └── 4️⃣ Alertas e Logs
 ├── Painel: Alertas críticos (Alertmanager)
 └── Painel: Últimos logs de falha (CloudWatch Logs Insights)
-
+```
 
 ---
 
@@ -85,7 +85,7 @@ histogram_quantile(0.95, sum(rate(aws_emr_job_duration_seconds_bucket[5m])) by (
 ```
 
 
-🧮 3️⃣ Cálculo de SLO no Grafana (exemplo em JSON/YAML)
+## 🧮 3️⃣ Cálculo de SLO no Grafana (exemplo em JSON/YAML)
 
 ```yaml
 service: "aws-glue-etl"
@@ -108,7 +108,8 @@ indicators:
 ```
 
 
-🧠 4️⃣ Visualização no Grafana (layout sugerido)
+## 🧠 4️⃣ Visualização no Grafana (layout sugerido)
+```text
 
 📊 Data Lake Reliability
 ───────────────────────────────────────────────
@@ -126,10 +127,12 @@ indicators:
 
 ⚠️ Recent Incidents
 Glue ETL job “user_data_etl” failed @ 2025-10-31T08:45
+```
 
-
-🚀 5️⃣ Consolidando SLIs e SLOs
-
-“Eu criaria um dashboard no Grafana consolidando SLIs e SLOs de confiabilidade do Data Lake — por exemplo, a taxa de sucesso dos jobs Glue e EMR, tempo médio de execução e latência P95.
+## 🚀 5️⃣ Consolidando SLIs e SLOs
+```text
+“Criar um dashboard no Grafana consolidando SLIs e SLOs de confiabilidade do Data Lake"
+Exemplo: a taxa de sucesso dos jobs Glue e EMR, tempo médio de execução e latência P95.
 As métricas viriam do CloudWatch e Prometheus, e seriam correlacionadas com custo e capacidade.
-Assim conseguimos identificar gargalos antes de impactar as consultas no Athena ou os consumidores de dados.”
+Assim conseguimos identificar gargalos antes de impactar as consultas no Athena ou os consumidores de dados.
+```

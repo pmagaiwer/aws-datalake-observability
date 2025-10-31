@@ -4,7 +4,7 @@ Projeto pessoal de observabilidade simulada para um **Data Lake AWS** usando mé
 
 
 📁 Estrutura do Projeto
-´´´bash
+```bash
 aws-datalake-observability/
 ├── README.md
 ├── grafana/
@@ -15,7 +15,7 @@ aws-datalake-observability/
 │   └── sli_slo_definitions.md
 └── docs/
     └── architecture_overview.md
-´´´
+```
 
 ## 🎯 Objetivo
 Demonstrar como implementar um monitoramento de **confiabilidade de dados (Data Reliability Engineering)** para pipelines em ambiente **AWS Data Lake**, aplicando conceitos de **SRE**.
