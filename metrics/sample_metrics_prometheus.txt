@@ -1,0 +1,13 @@
+# HELP glue_job_success_rate Percentual de jobs Glue com sucesso
+# TYPE glue_job_success_rate gauge
+glue_job_success_rate 0.992
+
+# HELP glue_job_duration_p99 Tempo P99 dos jobs Glue (s)
+# TYPE glue_job_duration_p99 gauge
+glue_job_duration_p99 240
+
+# HELP emr_cluster_startup_time_p99 Tempo P99 de inicialização de cluster EMR
+emr_cluster_startup_time_p99 150
+
+# HELP athena_query_error_rate Percentual de queries com erro
+athena_query_error_rate 0.03
