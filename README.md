@@ -4,18 +4,20 @@ Projeto pessoal de observabilidade simulada para um **Data Lake AWS** usando mé
 
 
 📁 Estrutura do Projeto
-´´´bash
+```bash
 aws-datalake-observability/
 ├── README.md
+├── conceitos-rapidos-sli-slo-sla.MD
+├── o-que-e-p99.md
 ├── grafana/
 │   ├── aws_datalake_sli_slo_dashboard.json
-│   └── dashboard_preview.png   ← (opcional)
+│   └── visao-geral-dashboard.MD
 ├── metrics/
 │   ├── sample_metrics_prometheus.txt
 │   └── sli_slo_definitions.md
 └── docs/
     └── architecture_overview.md
-´´´
+```
 
 ## 🎯 Objetivo
 Demonstrar como implementar um monitoramento de **confiabilidade de dados (Data Reliability Engineering)** para pipelines em ambiente **AWS Data Lake**, aplicando conceitos de **SRE**.

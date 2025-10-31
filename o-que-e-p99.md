@@ -1,15 +1,18 @@
 🧠 O que é P99 (Percentil 99)
-
+```bash
 👉 P99 (ou Percentil 99) significa que 99% das medições estão abaixo de um determinado valor — ou seja, apenas 1% dos casos são piores que esse limite.
+```
 
 É usado para medir performance percebida pelo usuário real, ignorando exceções isoladas.
 
 Percentil	Significado	Exemplo (latência em ms)
+```bash
 P50	Mediana – metade das execuções é mais rápida, metade mais lenta	150 ms
 P95	95% das execuções são mais rápidas que esse valor	400 ms
 P99	99% das execuções são mais rápidas que esse valor (1% mais lentas)	900 ms
+```
 
-💡 Em Data Reliability, usamos P99 para medir:
+## 💡 Em Data Reliability, usamos P99 para medir:
 
 Tempo máximo aceitável de execução de jobs Glue
 
@@ -18,7 +21,7 @@ Latência de leitura no S3
 Tempo de inicialização de clusters EMR
 
 📌 Assim você evita projetar SLOs só na média (que pode enganar) e garante confiabilidade real.
-
+```bash
 ☁️ Arquitetura de Monitoramento – Data Lake AWS
                    ┌────────────────────────────────┐
                    │         Data Producers          │
@@ -54,9 +57,11 @@ Tempo de inicialização de clusters EMR
          │   Observabilidade: CloudWatch + Grafana │
          │ Prometheus / Alertmanager / ServiceNow  │
          └─────────────────────────────────────────┘
+```
 
-📊 Dashboards Visuais (simulados) no Grafana
-🔹 1. Visão Geral – Data Lake Reliability
+## 📊 Dashboards Visuais (simulados) no Grafana
+# 🔹 1. Visão Geral – Data Lake Reliability
+```bash
 ─────────────────────────────────────────────
 📊 DATA LAKE RELIABILITY – AWS (Last 7d)
 ─────────────────────────────────────────────
@@ -67,16 +72,19 @@ Tempo de inicialização de clusters EMR
 ─────────────────────────────────────────────
 🕐 Incidents: 1 alert (ETL user_data falhou)
 ─────────────────────────────────────────────
+```
 
-
-👉 Interpretação:
+# 👉 Interpretação:
 A confiabilidade geral está dentro do esperado, mas o painel sinaliza o SLO de Athena próximo ao limite de 3 segundos — um ponto de atenção para otimização de queries.
 
-🔹 2. Painel AWS Glue – ETL Success & Duration
+# 🔹 2. Painel AWS Glue – ETL Success & Duration
+```bash
 📈 Glue Job Success Rate (Últimas 24h)
 ███████████████████████████████████▇▆▆▇▇▇▆▆▆
 99.3% ✅
+```
 
+```bash
 📉 Glue Job Duration (P99)
 ───────────────────────────────
 Hora     | Duração P99 (segundos)
@@ -86,12 +94,14 @@ Hora     | Duração P99 (segundos)
 14:00    | 870
 ───────────────────────────────
 SLO: ≤900s
+```
 
 
-👉 Interpretação:
+# 👉 Interpretação:
 Às 12h houve pico de duração acima do P99, indicando lentidão pontual — talvez sobrecarga no EMR ou contenção de recursos.
 
-🔹 3. Painel AWS EMR – Cluster Performance
+# 🔹 3. Painel AWS EMR – Cluster Performance
+```bash
 🔥 EMR Cluster – Job Duration P99 (Últimas 24h)
 ────────────────────────────────────────────
 0h  | ████▆▆▆▆▇▇▇▇▆▇▆▇▇▇▇▇▇▇ 12 min
@@ -101,13 +111,16 @@ SLO: ≤900s
 CPU Utilization: 75%
 Memory Usage: 68%
 SLO: ≤15 min
+```
 
-
-👉 Interpretação:
+# 👉 Interpretação:
 O P99 se mantém dentro do limite (SLO ≤ 15 min), mas próximo do topo — possível gargalo em I/O ou tuning Spark.
 
+```bash
 🔹 4. Painel Athena – Query Latency e Erros
 💡 Athena Query Latency (P99)
+```
+
 # O que é P99 (Percentil 99)
 
 👉 P99 (ou Percentil 99) significa que 99% das medições estão abaixo de um determinado valor — ou seja, apenas 1% dos casos são piores que esse limite.
@@ -115,12 +128,13 @@ O P99 se mantém dentro do limite (SLO ≤ 15 min), mas próximo do topo — pos
 É usado para medir a performance percebida pelo usuário real, ignorando exceções isoladas.
 
 ## Tabela de percentis
-
+```bash
 | Percentil | Significado | Exemplo (latência em ms) |
 |---|---|---:|
 | P50 | Mediana – metade das execuções é mais rápida, metade mais lenta | 150 ms |
 | P95 | 95% das execuções são mais rápidas que esse valor | 400 ms |
 | P99 | 99% das execuções são mais rápidas que esse valor (1% mais lentas) | 900 ms |
+```
 
 ## Por que usar P99
 
