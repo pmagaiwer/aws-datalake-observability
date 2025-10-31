@@ -13,10 +13,5 @@ flowchart LR
     ServiceNow["ServiceNow"]
 
     Data-Producers --> AWS-S3 --> AWS-GLUE-ETL --> AWS-EMR --> AWS-Athena --> Observabilidade-CloudWatch+Grafana
-    Data-Producers --> Observabilidade-CloudWatch+Grafana
-    AWS-S3 --> Observabilidade-CloudWatch+Grafana
-    AWS-Glue-ETL --> Observabilidade-CloudWatch+Grafana
-    AWS-EMR --> Observabilidade-CloudWatch+Grafana
-    AWS-Athena --> Observabilidade-CloudWatch+Grafana
     Observabilidade-CloudWatch+Grafana --> Prometheus --> Alertmanager --> ServiceNow
 ```
