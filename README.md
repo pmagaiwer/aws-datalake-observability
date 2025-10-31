@@ -7,9 +7,11 @@ Projeto pessoal de observabilidade simulada para um **Data Lake AWS** usando mé
 ```bash
 aws-datalake-observability/
 ├── README.md
+├── conceitos-rapidos-sli-slo-sla.MD
+├── o-que-e-p99.md
 ├── grafana/
 │   ├── aws_datalake_sli_slo_dashboard.json
-│   └── dashboard_preview.png   ← (opcional)
+│   └── visao-geral-dashboard.MD
 ├── metrics/
 │   ├── sample_metrics_prometheus.txt
 │   └── sli_slo_definitions.md
